@@ -1,10 +1,11 @@
 #include <iostream>
 #include <Eigen/Eigen>
 
+#include "plugin/PluginLoader.h"
+
 using namespace std;
 
 int main() {
-  Eigen::Matrix3d m;
-  cout << "Hello, World!" << endl;
+  PluginLoader pl("test");
   return 0;
 }

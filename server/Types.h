@@ -1,5 +1,5 @@
 #pragma once
-#include <Eigen/Array>
+#include <Eigen/Core>
 #include <cstdint>
 
 namespace plokid

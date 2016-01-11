@@ -32,3 +32,4 @@
 /.kdev4/
 /install/
 *.kdev4
+/build/

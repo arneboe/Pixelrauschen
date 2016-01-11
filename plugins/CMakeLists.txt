@@ -1,7 +1,15 @@
 cmake_minimum_required(VERSION 3.3)
 project(plugins)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+find_package(Eigen3 REQUIRED)
+find_package(Qt5Core REQUIRED)
 
-set(SOURCE_FILES TestPlugin.cpp TestPlugin.h)
-add_executable(plugins ${SOURCE_FILES})
+set(CMAKE_AUTOMOC ON)
+
+include_directories(${EIGEN3_INCLUDE_DIR}
+                    ${Qt5Core_INCLUDE_DIRS})
+                    
+set(EXAMPLE_SOURCES ExamplePlugin.h ExamplePlugin.cpp)
+add_library(example_plugin SHARED ${EXAMPLE_SOURCES})
+target_link_libraries(example_plugin Qt5::Core)
+add_dependencies(example_plugin server)
