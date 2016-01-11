@@ -9,17 +9,25 @@
 #include "IEffect.h"
 
 class QPluginLoader;
-
-class PluginLoader
+namespace plokid 
 {
-public:
-  PluginLoader(const std::string& pluginFolder);
-  
-private:
-  /**We need to retain instances of all the plugin loaders because
-   * the loaded plugins will be destroyed if the loaders are destroyed*/
-  std::vector<std::shared_ptr<QPluginLoader>> pluginLoaders;
-};
+  class PluginLoader
+  {
+  public:
+    PluginLoader(const std::string& pluginFolder);
+    
+    const std::vector<plokid::IEffect*>& getEffects() const;
+    
+  private:
+    /**We need to retain instances of all the plugin loaders because
+    * the loaded plugins will be destroyed if the loaders are destroyed*/
+    std::vector<std::shared_ptr<QPluginLoader>> pluginLoaders;
+    
+    /**The memory is managed by the correspondig plugin loaders. Therefore no auto pointer is needed*/
+    std::vector<plokid::IEffect*> effects;
+    
+  };
+}
 
 
 
