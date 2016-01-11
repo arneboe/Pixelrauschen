@@ -1,5 +1,8 @@
 
+## Dependencies
+### Server
+* qt5Core 
+* Boost.Log
 
-
-Deps:
-* ros-jade-class-loader
+### Plugins
+* qt5Core
