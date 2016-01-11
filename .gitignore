@@ -31,3 +31,4 @@
 /.idea/
 /.kdev4/
 /install/
+*.kdev4
