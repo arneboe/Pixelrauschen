@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.3)
 project(plugins)
 
+
+
 find_package(Eigen3 REQUIRED)
 find_package(Qt5Core REQUIRED)
+FIND_PACKAGE(Boost COMPONENTS log REQUIRED)
 
 set(CMAKE_AUTOMOC ON)
 
